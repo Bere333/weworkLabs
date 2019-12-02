@@ -1,0 +1,14 @@
+{
+    "visitas":[
+        {
+            "type":"cita"
+            
+        },
+        {
+            "type":"vendedor"
+        },
+        {
+            "type":"vendedor"
+        }
+    ]
+}
