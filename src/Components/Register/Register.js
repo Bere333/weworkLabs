@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Register.css';
+import Button from '@material-ui/core/Button';
+
 
 import Input from '../utils/Input'
 
@@ -28,6 +30,9 @@ class Register extends Component {
                 <label>¿eres discapacitado?</label>
                 <button>Si</button><button>No</button>
                 <button>Enviar respuesta</button>
+                <Button variant="contained" color="primary">
+      Hello World
+    </Button>
         
             </section>
         )}}
