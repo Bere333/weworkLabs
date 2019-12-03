@@ -10,7 +10,8 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          value:''
+          
+          comment: "",
           
         };
       }
@@ -18,7 +19,7 @@ class Register extends Component {
     onClick = (e) =>{
     e.preventDefault();
     
-    localStorage.setItem("orden", JSON.stringify(this.state.value));
+    // localStorage.setItem("orden", JSON.stringify(this.state.value));
     // history.push(this.props.ruta);
       
       const currentDate = new Date();
@@ -27,11 +28,12 @@ class Register extends Component {
       const strHour=`${currentDate.getHours()}-${currentDate.getMinutes()} hrs`
       
         db.collection('visitas').add({
-            name:'Isis',
+            name: this.state.comment,
+            // name:localStorage.getItem('comment'),
             correo:'isis@gmail.com',
         //     pedidos:"Pandemonium",
-        date: strDate,
-        dateHour: strHour,
+            date: strDate,
+            dateHour: strHour,
         // name:localStorage.getItem('name'),
         // num:localStorage.getItem('num'),
         // table:localStorage.getItem('num-mesa'),
@@ -52,6 +54,12 @@ class Register extends Component {
         )    
         
     }  
+    AddComent = e => {
+        this.setState({
+            comment: e.target.value
+        });
+        localStorage.setItem("comment", JSON.stringify(this.state.comment));
+      };
 
     render() {
         var style = {
@@ -66,7 +74,7 @@ class Register extends Component {
                 <Input
                     placeholder="Introduce tu nombre"
                     style={style}
-                    
+                    onChange={this.AddComent}
                     
                 />
                 <Input
