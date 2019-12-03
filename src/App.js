@@ -6,7 +6,7 @@ import './App.css';
 // import Home from './Components/Home/Home';
 import Welcome from './Components/Home/Home'
 
-import Home from './Components/Home/Home';
+
 import Register from './Components/Register/Register';
 import * as firebase from 'firebase';
 

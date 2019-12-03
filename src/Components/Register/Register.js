@@ -4,9 +4,9 @@ import './Register.css';
 // import Button from '@material-ui/core/Button';
 import * as firebase from 'firebase';
 import './Register.css';
-// import { input } from '@material-ui/core';
+import { Input } from '@material-ui/core';
 import TransitionsModal from '../Modal/Modal'
-// import { Button } from '@material-ui/core';
+ import { Button } from '@material-ui/core';
 
 
 
@@ -15,15 +15,16 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
+          name:"",
+          mail:"",
           
-          comment: "",
           
         };
       }
       
     onClick = (e) =>{
     e.preventDefault();
-    
+    localStorage.setItem("name", JSON.stringify(this.state.name));
     // localStorage.setItem("orden", JSON.stringify(this.state.value));
     // history.push(this.props.ruta);
       
@@ -33,12 +34,14 @@ class Register extends Component {
       const strHour=`${currentDate.getHours()}-${currentDate.getMinutes()} hrs`
       
         db.collection('visitas').add({
-            name: this.state.comment,
+            // email: localStorage.getItem('email'),
             // name:localStorage.getItem('comment'),
-            correo:'isis@gmail.com',
+            name:this.state.name,
         //     pedidos:"Pandemonium",
             date: strDate,
             dateHour: strHour,
+            mail:this.state.mail,
+            type:"discapacidad"
         // name:localStorage.getItem('name'),
         // num:localStorage.getItem('num'),
         // table:localStorage.getItem('num-mesa'),
@@ -59,12 +62,22 @@ class Register extends Component {
         )    
         
     }  
-    AddComent = e => {
+    onChange = e => {
         this.setState({
-            comment: e.target.value
+            name: e.target.value,
+            
         });
-        localStorage.setItem("comment", JSON.stringify(this.state.comment));
+        
+       // localStorage.setItem("name", JSON.stringify(this.state.name));
+        // localStorage.setItem("email", JSON.stringify(this.state.email));
+
       };
+
+    AddEmail = e => {
+      this.setState({
+        mail: e.target.value
+    });
+    }
 
     render() {
     
@@ -75,9 +88,9 @@ class Register extends Component {
                    <label>Registra tu entrada</label>
                 </div>
                 <div class="register-container">
-                    <input type="text" name="name" placeholder="Nombre completo"  onChange={this.AddComent}/>
-                    <input type="text" name="name" placeholder="Correo electrónico"  onChange={this.AddComent}/>
-                    <input type="text" name="name" placeholder="Persona/empresa a la que visita"  onChange={this.AddComent}/>
+                    <Input type="text"  placeholder="Nombre completo"  onChange={this.onChange}/>
+                    <Input type="text"  placeholder="Correo electrónico"  onChange={this.AddEmail} />
+                    <Input type="text"  placeholder="Persona/empresa a la que visita"  onChange={this.AddComent}/>
                 </div>
                 <div className="needs">
                 <label><input type='radio' name='Color' value='Red' /></label>
@@ -90,7 +103,7 @@ class Register extends Component {
                       <TransitionsModal/>
                     </div>
                     <div className="sig">
-                      <button variant="contained" onClick={this.onClick}>Entrada</button>
+                      <Button variant="contained" onClick={this.onClick}>Entrada</Button>
                     </div>
  
  
