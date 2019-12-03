@@ -17,7 +17,7 @@ class Register extends Component {
           hour:"", 
           date:"",
           discapacidad:"No",
-          clave:""
+          clave:"sVDr"
           
           
         };
@@ -40,7 +40,7 @@ class Register extends Component {
             date: this.state.date,
            
             discapacidad:this.state.discapacidad,
-            clave:'sVDr',
+            clave:this.state.clave,
         
       })
         .then((docRef) => {
@@ -92,7 +92,8 @@ class Register extends Component {
             date:e.target.value
         })
     }
-    addClave = () => {
+    addClave = (e) => {
+      e.preventDefault();
       const arrayAscii = () => {
         let array =[]
         for(let i = 65; i<=90; i ++){
@@ -126,9 +127,6 @@ class Register extends Component {
     }
     const pass = password(4)
     
-    this.setState({
-      clave: pass
-  })
     
     }
     
