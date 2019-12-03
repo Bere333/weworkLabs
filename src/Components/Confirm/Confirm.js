@@ -7,10 +7,29 @@ import { Button } from '@material-ui/core';
 class ConfirmData extends Component {
 
     render() {
+        // componentWillMount = () => {
+        //     const db = firebase.firestore(); 
+        //      const pedidosRef = db.collection('pedidos');   
+        //      pedidosRef.where('pendiente', '==', true )   
+        //      .get()    
+        //     .then((onSnapshot) => {  
+              
+        //       let {table}=this.state;  
+        //          onSnapshot.forEach((doc) => {    
+        //          table.push(doc.data().table)
+        //         this.setState({
+        //           table:table
+        //         })                 
+        //        })
+        //     })
+        // }
         return (
             <section className="section-confirm">
                 <div className="confirm-tittle">
                    <label>Confirma tus datos</label>
+                   <div className="box-print">
+
+                   </div>
                 </div>
                 <div className="confirm-btn">
                    <div className="btn-col1">
