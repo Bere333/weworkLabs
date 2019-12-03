@@ -14,7 +14,7 @@ class ConfirmData extends Component {
           mail:"",
           hour:"", 
           date:"",
-          discapacidad:"No",
+          discapacidad:"",
           clave:"",
           loading:true
           
@@ -55,7 +55,7 @@ class ConfirmData extends Component {
                 </div>
                 <div className="confirm-cont">
                     <div className="inputs-confirm">
-                    <i class="fas fa-spinner fa-pulse"></i>
+                    <i className="fas fa-spinner fa-pulse"></i>
                     <br></br>
                     <label className="title">Nombre:</label>
                     <p>{this.state.name} </p>

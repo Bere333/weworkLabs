@@ -157,7 +157,7 @@ class Register extends Component {
                </div>
                <div className="sig">
                  <Link to="/confirm">
-                     <Button variant="contained"onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
+                     <Button variant="contained"onClick={this.onClick}  >Siguiente</Button>
                  </Link>
                
                    </div>
