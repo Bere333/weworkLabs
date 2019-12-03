@@ -10,7 +10,7 @@ import { Button } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   modal: {
     width: '100%',
-    fontSize: '18px',
+    fontSize: '10px',
     fontWeight: 'bold',
     display: 'flex',
     flexDirection: 'row',

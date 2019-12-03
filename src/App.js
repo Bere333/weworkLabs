@@ -6,7 +6,7 @@ import './App.css';
 // import Home from './Components/Home/Home';
 import Welcome from './Components/Home/Home'
 import ConfirmData from './Components/Confirm/Confirm';
-
+import Visita from './Components/HomeVisita/HomeVisita';
 
 import Register from './Components/Register/Register';
 import * as firebase from 'firebase';
@@ -32,10 +32,10 @@ console.log(firebaseConfig);
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Route exact path='/register' component={Register} />
-      <Route  path='/homeAgenda' component={Welcome} />
+      <Route  exact path='/' component={Welcome} />
+      <Route path='/register' component={Register} />
       <Route  path='/confirm' component={ConfirmData} />
-      {/* <Route path='/search' component={Search} /> */}
+      <Route path='/homeVisita' component={Visita} />
 
 
     
