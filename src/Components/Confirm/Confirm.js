@@ -43,12 +43,10 @@ class ConfirmData extends Component {
         return (
             <section className="section-confirm">
                 <div className="confirm-tittle">
-                   <label>Confirma tus datos</label>
-                   <div className="box-print">
-
-                   </div>
+                   <label>Pase de acceso</label>
                 </div>
                 <div className="confirm-cont">
+                    <div className="inputs-confirm">
                     <label className="title">Nombre:</label>
                     <p>{this.state.name}</p>
                     <label className="title">Correo:</label>
@@ -59,17 +57,15 @@ class ConfirmData extends Component {
                      <p>{this.state.hour}</p>
                     <label className="title">Persona con discapacidad:</label>
                     <p>{this.state.discapacidad}</p>
+                    </div>
                 </div>
-                <div className="confirm-btn">
-                   <div className="btn-col1">
-                   <Link to="/">
-                   <Button variant="contained">Confirmar</Button>
-                   </Link>
-                   </div>
+                <div className="confirm-send">
+                    <p>Al confirmar se enviará un correo a tu visita con su código de acceso</p>
+                </div>    
                    <div className="privacity">
                      <ConfirmModal/>
                    </div> 
-                </div>
+
                
             </section> 
         )}}
