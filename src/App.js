@@ -33,6 +33,7 @@ console.log(firebaseConfig);
     <Router basename={process.env.PUBLIC_URL}>
       <Route exact path='/register' component={Register} />
       <Route  path='/home' component={Welcome} />
+      {/* <Route path='/search' component={Search} /> */}
 
 
     
