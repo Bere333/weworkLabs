@@ -6,6 +6,7 @@ import Fade from '@material-ui/core/Fade';
 import './ModalConfirm.css';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
+import Home from '../Home/Home'
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -71,8 +72,8 @@ export default function ConfirmModal() {
                    <Button className="btn-conf">Google</Button>
                    </div>
                    <div className="btn-col">
-                   <Link to="/homeAgenda">
-                   <Button variant="contained" >Cerrar</Button>
+                   <Link to="/confirm">
+                   <Button variant="contained" onClick={Home}>Cerrar</Button>
                    </Link>
                    </div>
                     

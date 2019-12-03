@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './Register.css';
 // import { input } from '@material-ui/core';
 import TransitionsModal from '../Modal/Modal';
-import { Button } from '@material-ui/core';
+import { Button, Link } from '@material-ui/core';
 import * as firebase from 'firebase';
-import { Link } from 'react-router-dom';
+import { Redirect} from "react-router-dom";
 import Welcome from '../Home/Home'
 
 
@@ -151,21 +151,23 @@ class Register extends Component {
                    <label for="">Hora de la visita</label>
                    <input type="time"  onChange={this.ChangeHour}
                    />
-               </div>
+               </div> 
                <div className="needs">
                  <input type='radio' className="chk"
                  onChange={this.ChangeState}/>
                    <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
                </div>
                <div className="sig">
-               <Link to="/confirm">
-                     <Button variant="contained" onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
-               </Link>
+                 <Link to="/confirm">
+                     <Button variant="contained"onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
+                 </Link>
+               
                    </div>
                    <div className="sig">
-                   <Link to="/home">
+                   <Link to="/">
                    <Button variant="contained" onClick={Welcome} >Regresar</Button>
                    </Link>
+                   
                    </div>
                    
            </section>
