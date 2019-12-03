@@ -1,13 +1,105 @@
-.home-section{
-    width:inherit;
+.section-welcome{
+    width: inherit;
     height: 100vh;
-    background-color: khaki;
-}
-.my-menu{
-    background-color: lawngreen;
-}
-.box-input{
-    padding: 20rem 0rem 0rem 4rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+.welcome-tittle{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px;
+    /* background-color: cadetblue; */
+    font-family: 'Open Sans', sans-serif;
+}
+.custom-select{
+    width:6rem;
+    height: 2rem;
+    border: transparent;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+
+}
+.welcome-btn{
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn-col1{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0.5rem 0;;
+}
+.welcome-btn Button{
+    background-color: black;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    width:18rem;
+    height: 4rem;
+    border-radius:10px; 
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+
+.privacity .btn-modal{
+    background-color: transparent;
+    box-shadow: none;
+    width: 15rem;
+    height: 2rem;
+    font-size: 12px;
+    text-decoration: underline;
+    color: black;
+}
+
+
+/* --------------------------------------------- */
+
+@media (min-width: 48em)  {
+
+.welcome-tittle{
+    height: 8rem;
+    font-size: 35px;
+}
+.welcome-btn{
+    width: 100%;
+    height: 30rem;
+    flex-direction: row;
+}
+.btn-col1{
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0.5rem 0;;
+}
+.custom-select{
+    width:8rem;
+    height: 3rem;
+    font-size: 18px;
+}
+.welcome-btn Button{
+    font-size: 30px;
+    width:18rem;
+    height: 15rem;
+    margin-top:1.5rem;
+    text-decoration: none;
+}
+
+}
+
