@@ -10,7 +10,7 @@ class Register extends Component {
        return (
            <section className="section-register">
                <div className="register-tittle">
-                  <label>Registra tu entrada</label>
+                  <label>REGISTRA TU ENTRADA</label>
                </div>
                <div class="register-container">
                    <input type="text" name="name" placeholder="Nombre completo"/>
@@ -18,7 +18,7 @@ class Register extends Component {
                    <input type="text" name="name" placeholder="Persona/empresa a la que visita"/>
                </div>
                <div className="needs">
-               <label><input type='radio' name='Color' value='Red' /></label>
+                 <input type='radio' className="chk"/>
                    <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
                </div>
                <div className="warn">
@@ -28,7 +28,7 @@ class Register extends Component {
                      <TransitionsModal/>
                    </div>
                    <div className="sig">
-                     <Button variant="contained">Entrada</Button>
+                     <Button variant="contained">Siguiente</Button>
                    </div>
 
 
