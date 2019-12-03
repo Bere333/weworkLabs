@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Confirm.css';
-import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+// import { Link } from 'react-router-dom';
+// import { Button } from '@material-ui/core';
 import ConfirmModal from '../ModalConfirm/ModalConfirm';
 import '../ModalConfirm/ModalConfirm.css'
 import * as firebase from 'firebase';
@@ -15,7 +15,8 @@ class ConfirmData extends Component {
           hour:"", 
           date:"",
           discapacidad:"No",
-          clave:""
+          clave:"",
+          loading:true
           
           
         };
@@ -35,8 +36,15 @@ class ConfirmData extends Component {
                 this.setState({hour:doc.data().dateHour})
                 this.setState({date:doc.data().date})
                 this.setState({hour:doc.data().hour})
+                this.setState({loading:false})
             })                 
            
+        }).catch(()=>{
+            this.setState({name:`<i class="fas fa-spinner fa-pulse"></i>`})
+                this.setState({mail:`<i class="fas fa-spinner fa-pulse"></i>`})
+                this.setState({hour:`<i class="fas fa-spinner fa-pulse"></i>`})
+                this.setState({date:`<i class="fas fa-spinner fa-pulse"></i>`})
+                this.setState({hour:`<i class="fas fa-spinner fa-pulse"></i>`})
         })
     }
     render() {
@@ -47,16 +55,18 @@ class ConfirmData extends Component {
                 </div>
                 <div className="confirm-cont">
                     <div className="inputs-confirm">
+                    <i class="fas fa-spinner fa-pulse"></i>
+                    <br></br>
                     <label className="title">Nombre:</label>
-                    <p>{this.state.name}</p>
+                    <p>{this.state.name} </p>
                     <label className="title">Correo:</label>
-                    <p>{this.state.mail}</p>
+                    <p>{this.state.mail} </p>
                     <label className="title">Fecha:</label>
-                     <p>{this.state.date}</p>
+                     <p>{this.state.date} </p>
                     <label className="title">Hora:</label>
-                     <p>{this.state.hour}</p>
+                     <p>{this.state.hour} </p>
                     <label className="title">Persona con discapacidad:</label>
-                    <p>{this.state.discapacidad}</p>
+                    <p>{this.state.discapacidad} </p>
                     </div>
                 </div>
                 <div className="confirm-send">

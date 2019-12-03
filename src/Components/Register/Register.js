@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './Register.css';
 // import { input } from '@material-ui/core';
-import TransitionsModal from '../Modal/Modal';
+//import TransitionsModal from '../Modal/Modal';
 import { Button, Link } from '@material-ui/core';
 import * as firebase from 'firebase';
-import { Redirect} from "react-router-dom";
+//import { Redirect} from "react-router-dom";
 import Welcome from '../Home/Home'
 
 
@@ -125,8 +125,8 @@ class Register extends Component {
           return string;
           
     }
-    const pass = password(4)
-    
+     const pass = password(4)
+    return pass
     
     }
     
