@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './Register.css';
 // import { input } from '@material-ui/core';
+
 import TransitionsModal from '../Modal/Modal';
 import { Button } from '@material-ui/core';
 import * as firebase from 'firebase';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import Welcome from '../Home/Home'
 import { Link } from 'react-router-dom';
 
@@ -18,7 +20,7 @@ class Register extends Component {
           hour:"", 
           date:"",
           discapacidad:"No",
-          clave:""
+          clave:"sVDr"
           
           
         };
@@ -42,7 +44,7 @@ class Register extends Component {
             date: this.state.date,
            
             discapacidad:this.state.discapacidad,
-            clave:'sVDr',
+            clave:this.state.clave,
         
       })
         .then((docRef) => {
@@ -94,7 +96,8 @@ class Register extends Component {
             date:e.target.value
         })
     }
-    addClave = () => {
+    addClave = (e) => {
+      e.preventDefault();
       const arrayAscii = () => {
         let array =[]
         for(let i = 65; i<=90; i ++){
@@ -126,11 +129,8 @@ class Register extends Component {
           return string;
           
     }
-    const pass = password(4)
-    
-    this.setState({
-      clave: pass
-  })
+     const pass = password(4)
+    return pass
     
     }
     
@@ -161,7 +161,9 @@ class Register extends Component {
                </div>
                <div className="sig">
                  <Link to="/confirm">
+
                      <Button  onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
+
                  </Link>
                    </div>
                    <div className="sig">
