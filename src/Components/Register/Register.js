@@ -29,14 +29,13 @@ class Register extends Component {
       
       const currentDate = new Date();
       const db = firebase.firestore();
-      const strDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`
-      const strHour=`${currentDate.getHours()}-${currentDate.getMinutes()} hrs`
+      
       
         db.collection('visitas').add({
             name:this.state.name,
             mail:this.state.mail,
-            dateHour: strHour,
-            date: strDate,
+            dateHour: this.state.hour,
+            date: this.state.date,
            
             discapacidad:this.state.discapacidad
         
@@ -104,8 +103,8 @@ class Register extends Component {
                    <label for="">Dirección de correo</label>
                    <input type="text" name="name"
                    onChange={this.AddEmail}/>
-                   <label for="">Fecha de la visita</label>
-                   <input type="date" value=""  onChange={this.ChangeDate }/>
+                   <label for="">Input date</label>
+                   <input type="date" required onChange={this.ChangeDate }/>
                    <label for="">Hora de la visita</label>
                    <input type="time"  onChange={this.ChangeHour}
                    />
