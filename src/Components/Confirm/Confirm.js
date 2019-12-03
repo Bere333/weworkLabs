@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-// import './Confirm.css';
+import './Confirm.css';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import ConfirmModal from '../ModalConfirm/ModalConfirm';
 import '../ModalConfirm/ModalConfirm.css'
+import * as firebase from 'firebase';
 
 class ConfirmData extends Component {
     constructor(props) {
@@ -29,7 +30,11 @@ class ConfirmData extends Component {
           
             
              onSnapshot.forEach((doc) => {    
-                this.setState({name:doc.data().filter})
+                this.setState({name:doc.data().name})
+                this.setState({mail:doc.data().mail})
+                this.setState({hour:doc.data().dateHour})
+                this.setState({date:doc.data().date})
+                this.setState({hour:doc.data().hour})
             })                 
            
         })
@@ -44,14 +49,16 @@ class ConfirmData extends Component {
                    </div>
                 </div>
                 <div className="confirm-cont">
-                    <label>Nombre</label>
-                    <p>Aquí va el dato nombre</p>
-                    <label>Correo</label>
-                    <p>Aquí va el dato correo</p>
-                    <label>Fecha</label>
-                    <p>Aquí va el dato fecha</p>
-                    <label>Hora</label>
-                    <p>Aquí va el dato hora</p>
+                    <label className="title">Nombre:</label>
+                    <p>{this.state.name}</p>
+                    <label className="title">Correo:</label>
+                    <p>{this.state.mail}</p>
+                    <label className="title">Fecha:</label>
+                     <p>{this.state.date}</p>
+                    <label className="title">Hora:</label>
+                     <p>{this.state.hour}</p>
+                    <label className="title">Persona con discapacidad:</label>
+                    <p>{this.state.discapacidad}</p>
                 </div>
                 <div className="confirm-btn">
                    <div className="btn-col1">
