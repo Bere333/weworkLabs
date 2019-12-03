@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
 import Button from '@material-ui/core/Button';
-import TransitionsModal from '../Modal/Modal';
-import Select from '../utils/Select'
+// import TransitionsModal from '../Modal/Modal';
+// import Select from '../utils/Select'
 
 class Welcome extends Component {
 

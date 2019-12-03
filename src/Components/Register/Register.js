@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 import './Register.css';
 // import { input } from '@material-ui/core';
 import TransitionsModal from '../Modal/Modal'
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 
 
 
@@ -90,7 +90,7 @@ class Register extends Component {
                       <TransitionsModal/>
                     </div>
                     <div className="sig">
-                      <Button variant="contained" onClick={this.onClick}>Entrada</Button>
+                      <button variant="contained" onClick={this.onClick}>Entrada</button>
                     </div>
  
  
