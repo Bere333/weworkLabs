@@ -17,6 +17,7 @@ class Register extends Component {
         this.state = {
           name:"",
           mail:"",
+          anfitrion:""
           
           
         };
@@ -41,6 +42,7 @@ class Register extends Component {
             date: strDate,
             dateHour: strHour,
             mail:this.state.mail,
+            anfitrion:this.state.anfitrion,
             type:"discapacidad"
         // name:localStorage.getItem('name'),
         // num:localStorage.getItem('num'),
@@ -79,6 +81,12 @@ class Register extends Component {
     });
     }
 
+    AddAnfitrion = e => {
+      this.setState({
+        anfitrion: e.target.value
+    });
+    }
+
     render() {
     
         return (
@@ -90,7 +98,7 @@ class Register extends Component {
                 <div class="register-container">
                     <Input type="text"  placeholder="Nombre completo"  onChange={this.onChange}/>
                     <Input type="text"  placeholder="Correo electrónico"  onChange={this.AddEmail} />
-                    <Input type="text"  placeholder="Persona/empresa a la que visita"  onChange={this.AddComent}/>
+                    <Input type="text"  placeholder="Persona/empresa a la que visita"  onChange={this.AddAnfitrion}/>
                 </div>
                 <div className="needs">
                 <label><input type='radio' name='Color' value='Red' /></label>
