@@ -1,10 +1,14 @@
-
+.btn-modal{
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration: underline;
+}
 #transition-modal-description{
     font-size:  10px;
 }
 
 @media (min-width: 48em)  {
 #transition-modal-description{
-    font-size:  22px;
+    font-size:  20px;
     }
 }    

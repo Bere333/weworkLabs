@@ -1,14 +1,10 @@
 
 import React, { Component } from 'react';
 import './Register.css';
-// import Button from '@material-ui/core/Button';
+// import { input } from '@material-ui/core';
+import TransitionsModal from '../Modal/Modal';
+import { Button } from '@material-ui/core';
 import * as firebase from 'firebase';
-import './Register.css';
-import { Input } from '@material-ui/core';
-import TransitionsModal from '../Modal/Modal'
- import { Button } from '@material-ui/core';
-
-
 
 
 class Register extends Component {
@@ -17,7 +13,8 @@ class Register extends Component {
         this.state = {
           name:"",
           mail:"",
-          anfitrion:"", 
+          hour:"", 
+          date:"",
           discapacidad:"No"
           
           
@@ -32,15 +29,14 @@ class Register extends Component {
       
       const currentDate = new Date();
       const db = firebase.firestore();
-      const strDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`
-      const strHour=`${currentDate.getHours()}-${currentDate.getMinutes()} hrs`
+      
       
         db.collection('visitas').add({
             name:this.state.name,
             mail:this.state.mail,
-            dateHour: strHour,
-            date: strDate,
-            anfitrion:this.state.anfitrion,
+            dateHour: this.state.hour,
+            date: this.state.date,
+           
             discapacidad:this.state.discapacidad
         
       })
@@ -73,49 +69,64 @@ class Register extends Component {
     });
     }
 
-    AddAnfitrion = e => {
-      this.setState({
-        anfitrion: e.target.value
-    });
-    }
+   // AddAnfitrion = e => {
+    //  this.setState({
+     //   anfitrion: e.target.value
+   // });
+  //  }
     ChangeState = e => {
       this.setState({
         discapacidad:"Si"
       })
     }
+    ChangeHour = e =>{
+        this.setState({
+            hour:e.target.value
+        })
+    }
+    ChangeDate = e =>{
+        this.setState({
+            date:e.target.value
+        })
+    }
 
-    render() {
+    render(){
+       return (
+           <section className="section-register">
+               <div className="register-tittle">
+                  <label>¿Quién te visita?</label>
+               </div>
+               <div class="register-container">
+                   <label for="">Nombre Completo</label>
+                   <input type="text" name="name" placeholder="Nombre completo"
+                   onChange={this.onChange}/>
+                   <label for="">Dirección de correo</label>
+                   <input type="text" name="name"
+                   onChange={this.AddEmail}/>
+                   <label for="">Input date</label>
+                   <input type="date" required onChange={this.ChangeDate }/>
+                   <label for="">Hora de la visita</label>
+                   <input type="time"  onChange={this.ChangeHour}
+                   />
+               </div>
+               <div className="needs">
+                 <input type='radio' className="chk"
+                 onChange={this.ChangeState}/>
+                   <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
+               </div>
+                   <div className="sig">
+                     <Button variant="contained" onClick={this.onClick}>Siguiente</Button>
+                   </div>
+
+
+           </section>
+
+
+
+       )
+
+    }
+
     
-        return (
-          
-                <section className="section-register">
-                <div className="register-tittle">
-                   <label>Registra tu entrada</label>
-                </div>
-                <div class="register-container">
-                    <Input type="text"  placeholder="Nombre completo"  onChange={this.onChange}/>
-                    <Input type="text"  placeholder="Correo electrónico"  onChange={this.AddEmail} />
-                    <Input type="text"  placeholder="Persona/empresa a la que visita"  onChange={this.AddAnfitrion}/>
-                </div>
-                <div className="needs">
-                <label><input type='radio' name='Color' value='Red' onChange={this.ChangeState}/></label>
-                    <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
-                </div>
-                <div className="warn">
-                    <p class="txt-warn">Al continuar con tu registro, aceptas nuestra política de privacidad</p>
-                </div>
-                    <div className="privacity">
-                      <TransitionsModal/>
-                    </div>
-                    <div className="sig">
-                      <Button variant="contained" onClick={this.onClick}>Entrada</Button>
-                    </div>
- 
- 
-            </section>
- 
-        )}}
-        
-
- export default Register;
-
+}
+export default Register;

@@ -1,8 +1,12 @@
 .section-register{
   width: 100%;
   height: 100vh;
-  background-color: crimson;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .register-tittle{
     width: 100%;
@@ -10,47 +14,49 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: darkgreen;
 }
 .register-container{
-    width: 100%;
-    height: 15rem;
+    width: 90%;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    background-color: darkorange;
+    align-items: left;
 }
 .register-container input{
     width: 18rem;
-    height: 2rem;
-    font-weight: 300;
+    height: 1rem;
+    /* font-weight: 300; */
     color: black;
 	border: none;
 	border-bottom: 1px solid #000;
 	padding: 10px;
     font-size: 1rem;
+    text-align: center;
     background-color: transparent;
     
+}
+.register-container label{
+    font-size: 1rem;
+    font-weight: lighter;
+    position:left;
 }
 .needs{
     width: 100%;
     height: 5rem;
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: deeppink;
 }
 .needs .chk{
-    width: 6rem;
-    height: 2rem;
-    border-radius: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.5rem 0 0;
 }
-.warn{
-    width: 100%;
-    height: 3rem;
-    text-align: center;
-    background-color: indigo;
+.txt-needs{
+    width: 60%;
+    font-size: 1rem;
 }
 .privacity{
     width: 100%;
@@ -58,7 +64,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: midnightblue;
 }
 .sig{
     width: 100%;
@@ -66,8 +71,55 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: orangered;
 }
 
+.sig Button{
+    background-color: black;
+    font-size: 1rem;
+    color: white;
+}
+
+/* -------------------------------------------------------- */
+
 @media (min-width: 48em)  {
+.section-register{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+.register-tittle{
+        height: 6rem;
+    }  
+.register-container{
+        height: 22rem;
+    }      
+
+.register-container input{
+        width: 35rem;
+        height: 2rem;
+        font-size: 1.5rem;
+    }
+.needs{
+        height: 6rem;
+    }   
+.needs .chk{
+        width: 2rem;
+        height: 2rem;
+    }    
+.txt-needs{
+        width: 60%;
+        font-size: 1.5rem;
+    }  
+.privacity{
+        height: 5rem;
+    }  
+.sig{
+        height: 7rem;
+    } 
+.sig Button{
+        font-size: 1.5rem;
+    }
+    
 }
