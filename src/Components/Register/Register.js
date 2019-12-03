@@ -4,6 +4,8 @@ import './Register.css';
 import TransitionsModal from '../Modal/Modal';
 import { Button } from '@material-ui/core';
 import * as firebase from 'firebase';
+import { Link } from 'react-router-dom';
+import Welcome from '../Home/Home'
 
 
 class Register extends Component {
@@ -116,16 +118,14 @@ class Register extends Component {
                    <div className="sig">
                      <Button variant="contained" onClick={this.onClick}>Siguiente</Button>
                    </div>
-
-
+                   <div className="sig">
+                   <Link to="/home">
+                   <Button variant="contained" onClick={Welcome}>Regresar</Button>
+                   </Link>
+                   </div>
            </section>
-
-
-
        )
 
     }
-
-    
 }
 export default Register;

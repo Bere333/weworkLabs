@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Home.css';
 import Button from '@material-ui/core/Button';
 import TransitionsModal from '../Modal/Modal';
-import Select from '../utils/Select'
+// import Select from '../utils/Select'
 import Register from '../Register/Register';
 import { Link } from 'react-router-dom';
 
