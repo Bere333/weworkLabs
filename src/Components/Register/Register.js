@@ -16,7 +16,8 @@ class Register extends Component {
           mail:"",
           hour:"", 
           date:"",
-          discapacidad:"No"
+          discapacidad:"No",
+          clave:""
           
           
         };
@@ -28,7 +29,7 @@ class Register extends Component {
     // localStorage.setItem("orden", JSON.stringify(this.state.value));
     // history.push(this.props.ruta);
       
-      const currentDate = new Date();
+      
       const db = firebase.firestore();
       
       
@@ -38,7 +39,8 @@ class Register extends Component {
             dateHour: this.state.hour,
             date: this.state.date,
            
-            discapacidad:this.state.discapacidad
+            discapacidad:this.state.discapacidad,
+            clave:this.state.clave,
         
       })
         .then((docRef) => {
@@ -90,6 +92,46 @@ class Register extends Component {
             date:e.target.value
         })
     }
+    addClave = () => {
+      const arrayAscii = () => {
+        let array =[]
+        for(let i = 65; i<=90; i ++){
+              array.push(i);
+              
+        }
+        for(let j = 97; j<=122;j++){
+             array.push(j);
+        }
+        return array;
+     }
+     
+     const arrayNumber = arrayAscii();
+    
+     
+    const password = (num) => {
+          let string = [];
+          for (let i = 1; i <= num; i++) {
+                const randomNumber = Math.random()*51;
+                const number = Math.floor(randomNumber);
+                const letters = ()=>{
+                     const string = String.fromCharCode(arrayNumber[number]);
+                     return string;
+                }
+                string+=letters()
+                
+                
+          }
+          return string;
+          
+    }
+    const pass = password(4)
+    
+    this.setState({
+      clave: pass
+  })
+    
+    }
+    
 
     render(){
        return (
@@ -116,11 +158,13 @@ class Register extends Component {
                    <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
                </div>
                    <div className="sig">
-                     <Button variant="contained" onClick={this.onClick}>Siguiente</Button>
+               <Link to="/confirm">
+                     <Button variant="contained" onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
+               </Link>
                    </div>
                    <div className="sig">
                    <Link to="/home">
-                   <Button variant="contained" onClick={Welcome}>Regresar</Button>
+                   <Button variant="contained" onClick={Welcome} >Regresar</Button>
                    </Link>
                    </div>
            </section>
