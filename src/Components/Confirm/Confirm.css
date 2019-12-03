@@ -1,26 +1,65 @@
-
+.section-confirm{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.confirm-tittle{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+.confirm-tittle h2{
+    font-style: 1rem;
+}
 .confirm-cont{
     width: 20rem;
-    height: 60vh;
-    background-color:white;
+    height: 25rem;
+    border-radius: 10px;
+    box-shadow: -1px -2px 35px -8px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputs-confirm{
+    width: 90%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputs-confirm label{
+    font-size: 1rem;
+    font-weight: 20px;
+    color: #2AC769;
+}
+.confirm-send{
+    width: 90%;
+    height: 4rem;
     text-align: center;
-    border-color: #2AC769;
-    border-style: groove;
-    border-radius: 20px;
-    margin-left: 1.6rem;
-    margin-top: 4vh;
-    font-family: 'Open Sans', sans-serif;
+}
+.confirm-send p{
+    font-size: 0.8rem;
 
 }
 
-.confirm-tittle{
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    margin-top: 5vh;
-    margin-left: 1.2rem;
-    font-weight: bold;
-}
-.title{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
+/* -------------------------------------------------- */
+
+@media (min-width: 48em){
+    .section-confirm{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -6,11 +6,13 @@ import Fade from '@material-ui/core/Fade';
 import './ModalConfirm.css';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
+import Home from '../Home/Home'
 
 const useStyles = makeStyles(theme => ({
   modal: {
-    width: '90%',
-    fontSize: '15px',
+    width: '100%',
+    fontSize: '10px',
+    fontWeight: 'bold',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -43,7 +45,7 @@ export default function ConfirmModal() {
   return (
     <div>
       <button className="btn-modal"onClick={handleOpen}>
-        Confirmar
+        CONFIRMAR
       </button>
       <Modal
         aria-labelledby="modal-confirm-title"
@@ -60,27 +62,22 @@ export default function ConfirmModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="modal-confirm-title">Agrega esta visita a tu calendario</h2>
-            <p id="transition-modal-confirm">
-                <section className="confirm-container">
+            <section className="confirm-modal">
                     <div className="confirm-tittle">
-                        <h1>Agrega esta visita a tu calendario</h1>
+                    <h2 id="modal-confirm-title">Agrega esta visita a tu calendario</h2>
                     </div>
-                    <div className="confirm-links">
-                    <div className="sig">
-                   <Button variant="contained">iCalendar</Button>
-                   <Button variant="contained">Calendario</Button>
-                   <Button variant="contained">Google</Button>
+                    <div className="links">
+                   <Button className="btn-conf">iCalendar</Button>
+                   <Button className="btn-conf">Calendario</Button>
+                   <Button className="btn-conf">Google</Button>
                    </div>
-                    </div>
-                    <div className="btn-col1">
-                   <Link to="/homeAgenda">
-                   <Button variant="contained" >Cerrar</Button>
+                   <div className="btn-col">
+                   <Link to="/confirm">
+                   <Button variant="contained" onClick={Home}>Cerrar</Button>
                    </Link>
                    </div>
-                </section>
-            </p>
-             
+                    
+            </section>   
           </div>
         </Fade>
       </Modal>

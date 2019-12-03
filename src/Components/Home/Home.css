@@ -6,6 +6,16 @@
     align-items: center;
     justify-content: center;
 }
+.box-select{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1.5rem;
+
+
+}
 .welcome-tittle{
     width: 100%;
     height: 5rem;
@@ -16,9 +26,14 @@
     /* background-color: cadetblue; */
     font-family: 'Open Sans', sans-serif;
 }
+.welcome-tittle img{
+
+    width: 12rem;
+    height: 5rem;
+}
 .custom-select{
-    width:6rem;
-    height: 2rem;
+    widows: 100%;
+    height: 3rem;
     border: transparent;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
