@@ -25,9 +25,6 @@ class ConfirmData extends Component {
                 </div>
                 <div className="confirm-btn">
                    <div className="btn-col">
-                   {/* <Link to="/">
-                   <ConfirmModal/>
-                   </Link> */}
                    </div>
                    <div className="privacity">
                      <ConfirmModal/>

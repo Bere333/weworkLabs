@@ -5,7 +5,7 @@ import './App.css';
 
 // import Home from './Components/Home/Home';
 import Welcome from './Components/Home/Home'
-import ConfirmData from './Components/Confirm/Confirm'
+import ConfirmData from './Components/Confirm/Confirm';
 
 
 import Register from './Components/Register/Register';
