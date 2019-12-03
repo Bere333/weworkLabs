@@ -24,10 +24,10 @@ class ConfirmData extends Component {
                     <p>Aquí va el dato hora</p>
                 </div>
                 <div className="confirm-btn">
-                   <div className="btn-col1">
-                   <Link to="/">
-                   <Button variant="contained">Confirmar</Button>
-                   </Link>
+                   <div className="btn-col">
+                   {/* <Link to="/">
+                   <ConfirmModal/>
+                   </Link> */}
                    </div>
                    <div className="privacity">
                      <ConfirmModal/>

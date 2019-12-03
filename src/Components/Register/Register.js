@@ -120,7 +120,7 @@ class Register extends Component {
                      <Button variant="contained" onClick={this.onClick}>Siguiente</Button>
                    </div>
                    <div className="sig">
-                   <Link to="/home">
+                   <Link to="/homeAgenda">
                    <Button variant="contained" onClick={Welcome}>Regresar</Button>
                    </Link>
                    </div>

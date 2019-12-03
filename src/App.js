@@ -16,7 +16,7 @@ import * as firebase from 'firebase';
 
 
 function App() {
-  var firebaseConfig = {
+  var firebaseConfig = { 
     apiKey: "AIzaSyAn3GbL2dZH4z-J4YHX0jlwZXK8YRbu8Bs",
     authDomain: "talent-fest-6406d.firebaseapp.com",
     databaseURL: "https://talent-fest-6406d.firebaseio.com",
