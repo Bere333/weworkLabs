@@ -40,7 +40,7 @@ class Register extends Component {
             date: this.state.date,
            
             discapacidad:this.state.discapacidad,
-            clave:this.state.clave,
+            clave:'sVDr',
         
       })
         .then((docRef) => {

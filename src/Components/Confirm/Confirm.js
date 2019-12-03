@@ -5,24 +5,35 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
 class ConfirmData extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          name:"",
+          mail:"",
+          hour:"", 
+          date:"",
+          discapacidad:"No",
+          clave:""
+          
+          
+        };
+      }
 
+    componentWillMount = () => {
+        const db = firebase.firestore(); 
+         const pedidosRef = db.collection('visitas');   
+         pedidosRef.where('clave', '==', 'sVDr' )   
+         .get()    
+        .then((onSnapshot) => {  
+          
+            
+             onSnapshot.forEach((doc) => {    
+                this.setState({name:doc.data().filter})
+            })                 
+           
+        })
+    }
     render() {
-        // componentWillMount = () => {
-        //     const db = firebase.firestore(); 
-        //      const pedidosRef = db.collection('pedidos');   
-        //      pedidosRef.where('pendiente', '==', true )   
-        //      .get()    
-        //     .then((onSnapshot) => {  
-              
-        //       let {table}=this.state;  
-        //          onSnapshot.forEach((doc) => {    
-        //          table.push(doc.data().table)
-        //         this.setState({
-        //           table:table
-        //         })                 
-        //        })
-        //     })
-        // }
         return (
             <section className="section-confirm">
                 <div className="confirm-tittle">
