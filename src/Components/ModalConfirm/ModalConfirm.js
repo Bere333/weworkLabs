@@ -11,16 +11,22 @@ import Home from '../Home/Home'
 const useStyles = makeStyles(theme => ({
   modal: {
     width: '100%',
+    height: '10rem',
     fontSize: '10px',
     fontWeight: 'bold',
     display: 'flex',
-    flexDirection: 'row',
+    // flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   paper: {
+    width: '90%',
+    height: '15rem',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
+    position: 'absolute',
+
+    top: '20%',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     display: 'flex',
@@ -31,6 +37,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ConfirmModal() {
+ 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -73,7 +80,7 @@ export default function ConfirmModal() {
                    </div>
                    <div className="btn-col">
                    <Link to="/confirm">
-                   <Button variant="contained" onClick={Home}>Cerrar</Button>
+                   <Button onClick={handleClose}>Cerrar</Button>
                    </Link>
                    </div>
                     

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import './Register.css';
 // import { input } from '@material-ui/core';
 import TransitionsModal from '../Modal/Modal';
-import { Button, Link } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import * as firebase from 'firebase';
-import { Redirect} from "react-router-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Welcome from '../Home/Home'
+import { Link } from 'react-router-dom';
 
 
 class Register extends Component {
@@ -24,7 +25,8 @@ class Register extends Component {
       }
       
     onClick = (e) =>{
-    e.preventDefault();
+      
+    // e.preventDefault();
     localStorage.setItem("name", JSON.stringify(this.state.name));
     // localStorage.setItem("orden", JSON.stringify(this.state.value));
     // history.push(this.props.ruta);
@@ -159,9 +161,8 @@ class Register extends Component {
                </div>
                <div className="sig">
                  <Link to="/confirm">
-                     <Button variant="contained"onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
+                     <Button  onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
                  </Link>
-               
                    </div>
                    <div className="sig">
                    <Link to="/">

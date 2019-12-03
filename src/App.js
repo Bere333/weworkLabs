@@ -28,7 +28,7 @@ function App() {
   }; 
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-console.log(firebaseConfig);
+// console.log(firebaseConfig);
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
