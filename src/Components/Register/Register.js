@@ -96,16 +96,16 @@ class Register extends Component {
        return (
            <section className="section-register">
                <div className="register-tittle">
-                  <label>¿Quién te visita?</label>
+                  <label>Detalles de la visita</label>
                </div>
                <div class="register-container">
                    <label for="">Nombre Completo</label>
-                   <input type="text" name="name" placeholder="Nombre completo"
+                   <input type="text" name="name"
                    onChange={this.onChange}/>
                    <label for="">Dirección de correo</label>
                    <input type="text" name="name"
                    onChange={this.AddEmail}/>
-                   <label for="">Input date</label>
+                   <label for="">Fecha de la visita</label>
                    <input type="date" required onChange={this.ChangeDate }/>
                    <label for="">Hora de la visita</label>
                    <input type="time"  onChange={this.ChangeHour}
