@@ -10,23 +10,22 @@ class Register extends Component {
        return (
            <section className="section-register">
                <div className="register-tittle">
-                  <label>REGISTRA TU ENTRADA</label>
+                  <label>¿Quién te visita?</label>
                </div>
                <div class="register-container">
+                   <label for="">Nombre Completo</label>
                    <input type="text" name="name" placeholder="Nombre completo"/>
-                   <input type="text" name="name" placeholder="Correo electrónico"/>
-                   <input type="text" name="name" placeholder="Persona/empresa a la que visita"/>
+                   <label for="">Dirección de correo</label>
+                   <input type="text" name="name"/>
+                   <label for="">Fecha de la visita</label>
+                   <input type="date" value=""/>
+                   <label for="">Hora de la visita</label>
+                   <input type="time"/>
                </div>
                <div className="needs">
                  <input type='radio' className="chk"/>
                    <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
                </div>
-               <div className="warn">
-                   <p class="txt-warn">Al continuar con tu registro, aceptas nuestra política de privacidad</p>
-               </div>
-                   <div className="privacity">
-                     <TransitionsModal/>
-                   </div>
                    <div className="sig">
                      <Button variant="contained">Siguiente</Button>
                    </div>

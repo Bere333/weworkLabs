@@ -3,6 +3,10 @@
   height: 100vh;
   font-size: 25px;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .register-tittle{
     width: 100%;
@@ -12,17 +16,17 @@
     align-items: center;
 }
 .register-container{
-    width: 100%;
-    height: 15rem;
+    width: 90%;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: left;
 }
 .register-container input{
     width: 18rem;
-    height: 2rem;
-    font-weight: 300;
+    height: 1rem;
+    /* font-weight: 300; */
     color: black;
 	border: none;
 	border-bottom: 1px solid #000;
@@ -31,6 +35,11 @@
     text-align: center;
     background-color: transparent;
     
+}
+.register-container label{
+    font-size: 1rem;
+    font-weight: lighter;
+    position:left;
 }
 .needs{
     width: 100%;
@@ -48,12 +57,6 @@
 .txt-needs{
     width: 60%;
     font-size: 1rem;
-}
-.warn{
-    width: 100%;
-    height: 3rem;
-    text-align: center;
-    font-size: 0.8rem;
 }
 .privacity{
     width: 100%;
@@ -87,7 +90,7 @@
       }
 
 .register-tittle{
-        height: 8rem;
+        height: 6rem;
     }  
 .register-container{
         height: 22rem;
@@ -109,9 +112,6 @@
         width: 60%;
         font-size: 1.5rem;
     }  
-.warn{
-        font-size: 1rem;
-    }      
 .privacity{
         height: 5rem;
     }  

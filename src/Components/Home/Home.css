@@ -20,7 +20,7 @@
     width:6rem;
     height: 2rem;
     border: transparent;
-    font-size: 10px;
+    font-size: 12px;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 
@@ -46,6 +46,7 @@
 .welcome-btn Button{
     background-color: black;
     font-size: 15px;
+    text-decoration: none;
     color: white;
     width:18rem;
     height: 4rem;
@@ -60,6 +61,7 @@
     width: 15rem;
     height: 2rem;
     font-size: 12px;
+    text-decoration: underline;
     color: black;
 }
 
@@ -87,13 +89,16 @@
     margin: 0 0 0.5rem 0;;
 }
 .custom-select{
-    font-size: 15px;
+    width:8rem;
+    height: 3rem;
+    font-size: 18px;
 }
 .welcome-btn Button{
     font-size: 30px;
     width:18rem;
     height: 15rem;
     margin-top:1.5rem;
+    text-decoration: none;
 }
 
 }
