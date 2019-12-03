@@ -17,7 +17,8 @@ class Register extends Component {
         this.state = {
           name:"",
           mail:"",
-          anfitrion:""
+          anfitrion:"", 
+          discapacidad:"No"
           
           
         };
@@ -35,22 +36,13 @@ class Register extends Component {
       const strHour=`${currentDate.getHours()}-${currentDate.getMinutes()} hrs`
       
         db.collection('visitas').add({
-            // email: localStorage.getItem('email'),
-            // name:localStorage.getItem('comment'),
             name:this.state.name,
-        //     pedidos:"Pandemonium",
-            date: strDate,
-            dateHour: strHour,
             mail:this.state.mail,
+            dateHour: strHour,
+            date: strDate,
             anfitrion:this.state.anfitrion,
-            type:"discapacidad"
-        // name:localStorage.getItem('name'),
-        // num:localStorage.getItem('num'),
-        // table:localStorage.getItem('num-mesa'),
-        // type:typevalue,
-        // option:optionvalue,
-        // quantity:quantityvalue,
-        // completeArray:localStorage.getItem('orden')
+            discapacidad:this.state.discapacidad
+        
       })
         .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
@@ -86,6 +78,11 @@ class Register extends Component {
         anfitrion: e.target.value
     });
     }
+    ChangeState = e => {
+      this.setState({
+        discapacidad:"Si"
+      })
+    }
 
     render() {
     
@@ -101,7 +98,7 @@ class Register extends Component {
                     <Input type="text"  placeholder="Persona/empresa a la que visita"  onChange={this.AddAnfitrion}/>
                 </div>
                 <div className="needs">
-                <label><input type='radio' name='Color' value='Red' /></label>
+                <label><input type='radio' name='Color' value='Red' onChange={this.ChangeState}/></label>
                     <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
                 </div>
                 <div className="warn">
