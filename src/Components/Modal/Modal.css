@@ -1,0 +1,10 @@
+
+#transition-modal-description{
+    font-size:  10px;
+}
+
+@media (min-width: 48em)  {
+#transition-modal-description{
+    font-size:  22px;
+    }
+}    
