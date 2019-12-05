@@ -6,7 +6,7 @@ import Fade from '@material-ui/core/Fade';
 import './ModalConfirm.css';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import Home from '../Home/Home'
+
 
 const useStyles = makeStyles(theme => ({
   modal: {

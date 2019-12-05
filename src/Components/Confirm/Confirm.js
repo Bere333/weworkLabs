@@ -25,7 +25,7 @@ class ConfirmData extends Component {
     componentWillMount = () => {
         const db = firebase.firestore(); 
          const pedidosRef = db.collection('visitas');   
-         pedidosRef.where('clave', '==', 'sVDr' )   
+         pedidosRef.where('clave', '==', localStorage.getItem("clave", JSON.stringify(this.state.clave)) )   
          .get()    
         .then((onSnapshot) => {  
           
@@ -67,6 +67,8 @@ class ConfirmData extends Component {
                      <p>{this.state.hour} </p>
                     <label className="title">Persona con discapacidad:</label>
                     <p>{this.state.discapacidad} </p>
+                    <label className="title">Clave:</label>
+                    <p>{localStorage.getItem("clave", JSON.stringify(this.state.clave))} </p>
                     </div>
                 </div>
                 <div className="confirm-send">

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './Register.css';
 // import { input } from '@material-ui/core';
 
-import TransitionsModal from '../Modal/Modal';
+
 import { Button } from '@material-ui/core';
 import * as firebase from 'firebase';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 import Welcome from '../Home/Home'
 import { Link } from 'react-router-dom';
@@ -20,7 +20,7 @@ class Register extends Component {
           hour:"", 
           date:"",
           discapacidad:"No",
-          clave:"sVDr"
+          clave:""
           
           
         };
@@ -60,6 +60,7 @@ class Register extends Component {
         
     }  
     onChange = e => {
+      e.preventDefault();
         this.setState({
             name: e.target.value,
             
@@ -71,6 +72,7 @@ class Register extends Component {
       };
 
     AddEmail = e => {
+      e.preventDefault();
       this.setState({
         mail: e.target.value
     });
@@ -82,22 +84,25 @@ class Register extends Component {
    // });
   //  }
     ChangeState = e => {
+      e.preventDefault();
       this.setState({
         discapacidad:"Si"
       })
     }
     ChangeHour = e =>{
+      e.preventDefault();
         this.setState({
             hour:e.target.value
         })
     }
     ChangeDate = e =>{
+      e.preventDefault();
         this.setState({
             date:e.target.value
         })
     }
-    addClave = (e) => {
-      e.preventDefault();
+    componentWillMount = () => {
+      
       const arrayAscii = () => {
         let array =[]
         for(let i = 65; i<=90; i ++){
@@ -130,6 +135,8 @@ class Register extends Component {
           
     }
      const pass = password(4)
+     this.setState({clave:pass})
+     localStorage.setItem("clave", JSON.stringify(this.state.clave));
     return pass
     
     }
@@ -151,8 +158,8 @@ class Register extends Component {
                    <label for="">Fecha de la visita</label>
                    <input type="date" required onChange={this.ChangeDate }/>
                    <label for="">Hora de la visita</label>
-                   <input type="time"  onChange={this.ChangeHour}
-                   />
+                   <input type="time"  onChange={this.ChangeHour}/>
+                   
                </div> 
                <div className="needs">
                  <input type='radio' className="chk"
