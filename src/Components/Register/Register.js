@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './Register.css';
 // import { input } from '@material-ui/core';
-import TransitionsModal from '../Modal/Modal';
+
+
 import { Button } from '@material-ui/core';
 import * as firebase from 'firebase';
-import { Link } from 'react-router-dom';
+
+
 import Welcome from '../Home/Home'
+import { Link } from 'react-router-dom';
 
 
 class Register extends Component {
@@ -24,7 +27,8 @@ class Register extends Component {
       }
       
     onClick = (e) =>{
-    e.preventDefault();
+      
+    // e.preventDefault();
     localStorage.setItem("name", JSON.stringify(this.state.name));
     // localStorage.setItem("orden", JSON.stringify(this.state.value));
     // history.push(this.props.ruta);
@@ -40,7 +44,7 @@ class Register extends Component {
             date: this.state.date,
            
             discapacidad:this.state.discapacidad,
-            clave:'sVDr',
+            clave:this.state.clave,
         
       })
         .then((docRef) => {
@@ -56,6 +60,7 @@ class Register extends Component {
         
     }  
     onChange = e => {
+      e.preventDefault();
         this.setState({
             name: e.target.value,
             
@@ -67,6 +72,7 @@ class Register extends Component {
       };
 
     AddEmail = e => {
+      e.preventDefault();
       this.setState({
         mail: e.target.value
     });
@@ -78,21 +84,25 @@ class Register extends Component {
    // });
   //  }
     ChangeState = e => {
+      e.preventDefault();
       this.setState({
         discapacidad:"Si"
       })
     }
     ChangeHour = e =>{
+      e.preventDefault();
         this.setState({
             hour:e.target.value
         })
     }
     ChangeDate = e =>{
+      e.preventDefault();
         this.setState({
             date:e.target.value
         })
     }
-    addClave = () => {
+    componentWillMount = () => {
+      
       const arrayAscii = () => {
         let array =[]
         for(let i = 65; i<=90; i ++){
@@ -124,11 +134,10 @@ class Register extends Component {
           return string;
           
     }
-    const pass = password(4)
-    
-    this.setState({
-      clave: pass
-  })
+     const pass = password(4)
+     this.setState({clave:pass})
+     localStorage.setItem("clave", JSON.stringify(this.state.clave));
+    return pass
     
     }
     
@@ -149,24 +158,28 @@ class Register extends Component {
                    <label for="">Fecha de la visita</label>
                    <input type="date" required onChange={this.ChangeDate }/>
                    <label for="">Hora de la visita</label>
-                   <input type="time"  onChange={this.ChangeHour}
-                   />
-               </div>
+                   <input type="time"  onChange={this.ChangeHour}/>
+                   
+               </div> 
                <div className="needs">
                  <input type='radio' className="chk"
                  onChange={this.ChangeState}/>
                    <p class="txt-needs">¿Tienes alguna discapacidad o requieres asistencia?</p>
                </div>
-                   <div className="sig">
-               <Link to="/confirm">
-                     <Button variant="contained" onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
-               </Link>
+               <div className="sig">
+                 <Link to="/confirm">
+
+                     <Button  onClick={this.onClick} onChange={this.addClave} >Siguiente</Button>
+
+                 </Link>
                    </div>
                    <div className="sig">
-                   <Link to="/home">
+                   <Link to="/">
                    <Button variant="contained" onClick={Welcome} >Regresar</Button>
                    </Link>
+                   
                    </div>
+                   
            </section>
        )
 
