@@ -2,9 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://bere333.github.io/weworkLabs/",
+  "homepage": "https://isislazaro.github.io/weworkLabs/",
   "dependencies": {
     "@material-ui/core": "^4.7.1",
+    "emailjs-com": "2.4.1",
     "firebase": "^7.5.0",
     "react": "^16.12.0",
     "react-burger-menu": "^2.6.13",
@@ -38,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "2.1.1"
   }
 }

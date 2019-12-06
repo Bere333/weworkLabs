@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form id="myform">
+            <label>Nombre:</label>
+            <input id="guest-name" type="text" name="from_name" />
+            <label>email</label>
+            <input type="text" id="guest-email" name="from_email" />
+            <label>fecha</label>
+            <input type="text" id="appointment-date" name="subject" />
+            <label>hora</label>
+            <input type="text" id="hora" name=" message" />
+            <br><br>
+            <button id="send-btn">
+                Send
+            </button>
+        </form>
+
+        <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("user_SNYHQDYZHsy8FYLM5wZhB");
+            })();
+        </script>
+        <script src="app.js"></script>
+    </body>
+
+</html>
